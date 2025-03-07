@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     } catch (error) {
       console.error("Signup failed:", error.response?.data || error.message);
-      throw new Error(error.response?.data?.message || "Signup failed");
+      error.message;
     }
   };
 
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
-      throw new Error(error.response?.data?.message || "Login failed");
+        throw  Error(error.message);
     }
   };
 

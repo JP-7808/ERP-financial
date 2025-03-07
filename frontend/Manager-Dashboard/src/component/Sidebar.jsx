@@ -16,7 +16,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
     <>
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-screen bg-blue-900 text-white p-6 shadow-lg flex flex-col justify-between w-72 z-100 transition-transform duration-300
+        className={`fixed top-0 left-0 min-h-full bg-blue-900 text-white p-6 shadow-lg flex flex-col justify-between w-72 z-100 transition-transform duration-300
           ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
         {/* Close Button (Mobile) */}
@@ -49,13 +49,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         </div>
 
         {/* User Profile */}
-        <div className="flex items-center p-4 border-t border-gray-500">
-          <FaUserCircle className="text-4xl mr-2" />
-          <div>
-            <p className="font-semibold">Allen Frank</p>
-            <p className="text-sm text-gray-300">allen@gmail.com</p>
-          </div>
-        </div>
+      
       </aside>
 
       {/* Overlay when sidebar is open on mobile */}

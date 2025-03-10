@@ -62,7 +62,7 @@ const PerformanceTrackingMain = ({ isSidebarOpen }) => {
   };
 
   return (
-    <div className={`mt-20 p-4 md:p-6 bg-gray-100 min-h-screen transition-all duration-300 ${isSidebarOpen ? "lg:ml-72 lg:w-[calc(100%-18rem)]" : "w-full"}`}>  
+    <div className={`mt-20 p-4 md:p-6 bg-gray-100 min-h-screen transition-all duration-300 ${isSidebarOpen ? "lg:ml-72 lg:w-[calc(100%-18rem)]" : "w-screen"}`}>  
       <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg">
         <h3 className="text-lg font-semibold mb-4">INDIVIDUAL AND TEAM SALES AGAINST TARGET (YEARLY)</h3>
         <ResponsiveContainer width="100%" height={200}>
@@ -80,7 +80,7 @@ const PerformanceTrackingMain = ({ isSidebarOpen }) => {
       <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg mt-6">
         <h3 className="text-lg font-semibold mb-4">TEAMS QUARTERLY PERFORMANCE</h3>
         <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-gray-700 text-sm md:text-base">
+          <table className="w-screen border border-gray-300 text-gray-700 text-sm md:text-base">
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-left">
                 <th className="py-3 px-4 text-center">TEAM NO</th>

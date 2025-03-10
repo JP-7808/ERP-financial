@@ -28,7 +28,7 @@ export default function LandingPage() {
               onClick={() => setIsSidebarOpen(false)}
             />
           </div>
-           <nav className="space-y-3">
+          <nav className="space-y-3">
             
             
               <button className="w-full text-left py-3 px-4 hover:bg-blue-700 rounded">
@@ -60,9 +60,9 @@ export default function LandingPage() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 bg-blue-50 p-4 md:p-8 overflow-auto w-full transition-all duration-300 ${isSidebarOpen ? 'md:ml-72' : 'ml-0'}`">
+      <main className="flex-1 bg-blue-50   p-4 md:p-8 overflow-auto w-full transition-all duration-300 ${isSidebarOpen ? 'md:ml-72' : 'ml-0'}` mt-10">
         {/* Navbar */}
-        <div className="fixed top-0 left-0 right-0 md:left-72 bg-blue-900 text-white p-4 shadow flex justify-between items-center z-50">
+        <div className="fixed top-0 left-0 right-0 md:left-72 h-20 bg-blue-900 text-white p-4 shadow flex justify-between items-center z-50">
           <FaBars
             className="text-2xl cursor-pointer md:hidden"
             onClick={() => setIsSidebarOpen(true)}
@@ -70,11 +70,7 @@ export default function LandingPage() {
           <h2 className="text-lg font-semibold">Welcome to ERP System</h2>
           <div className="hidden md:flex items-center gap-4">
             <FaBell className="text-xl cursor-pointer" />
-            <img
-              src={profile}
-              alt="User"
-              className="w-8 h-8 rounded-full border"
-            />
+            
           </div>
         </div>
 
@@ -89,34 +85,32 @@ export default function LandingPage() {
               An intuitive ERP system designed to streamline administration,
               enhance management, and empower employees.
             </p>
-            <button className="mt-6 px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow-md hover:bg-gray-100">
-              Get Started
-            </button>
+           
           </div>
 
           {/* Features Section */}
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold text-blue-900">
+            <Link to={"http://my-app-xyg2.vercel.app"}> <h3 className="text-2xl font-semibold text-blue-900">
                 Admin Panel
-              </h3>
+              </h3></Link> 
               <p className="text-gray-600 mt-2">
                 Manage users, permissions, and company settings effortlessly.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold text-blue-900">
+            <Link to="/managerdash"> <h3 className="text-2xl font-semibold text-blue-900">
                 Manager Dashboard
-              </h3>
+              </h3></Link>
               <p className="text-gray-600 mt-2">
                 Track employee performance, manage projects, and analyze
                 reports.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold text-blue-900">
+            <Link to={"https://employee-dash-rho.vercel.app/"}> <h3 className="text-2xl font-semibold text-blue-900">
                 Employee Portal
-              </h3>
+              </h3></Link>
               <p className="text-gray-600 mt-2">
                 Access schedules, tasks, and communication tools in one place.
               </p>

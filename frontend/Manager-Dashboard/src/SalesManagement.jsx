@@ -47,6 +47,8 @@ const SalesManagement = ({ isSidebarOpen }) => {
   const fetchCustomerData = async () => {
     setLoading(true);
     try {
+
+      
       
       const response = await axios.get("https://erp-r0hx.onrender.com/api/employee/");
       const updatedCustomers = await Promise.all(
@@ -112,7 +114,7 @@ const SalesManagement = ({ isSidebarOpen }) => {
 
   return (
     <div className={`mt-20 p-4 md:p-6 bg-gray-100 min-h-screen transition-all duration-300 ${
-      isSidebarOpen ? "lg:ml-72 lg:w-[calc(100%-18rem)]" : "w-full"
+      isSidebarOpen ? "lg:ml-72 lg:w-[calc(100%-18rem)]" : "w-screen"
     }`}>
       <h2 className="text-2xl font-bold mb-4">Sales & Customer Details</h2>
 
@@ -131,13 +133,16 @@ const SalesManagement = ({ isSidebarOpen }) => {
       </div>
 
       {/* Tables */}
+      {loading ? (
+              <p className="text-center text-lg text-gray-600">Loading Data...</p>
+            ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         
         {/* Product Sales Table */}
         <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-full h-[400px]">
           <h3 className="text-lg font-semibold mb-2">Product Sales</h3>
           <div className="overflow-y-auto max-h-[300px]">
-            <table className="w-full text-gray-700">
+            <table className="w-full text-gray-700 border-collapse">
               <thead>
                 <tr className="bg-gray-200 text-gray-600 uppercase text-sm">
                   <th className="py-3 px-4 text-left">Product Name</th>
@@ -192,9 +197,15 @@ const SalesManagement = ({ isSidebarOpen }) => {
         </div>
 
         {/* Customer Details Table */}
-        <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-full h-[400px] overflow-hidden">
+
+        
+        <div className="bg-white p-4  md:p-6 rounded-lg shadow-lg w-full h-[400px] overflow-hidden">
   <h3 className="text-lg font-semibold mb-2">Customer Details</h3>
+  {loading ? (
+              <p className="text-center text-lg text-gray-600">Loading Data...</p>
+            ) : (
   <div className="overflow-y-auto max-h-[300px]">
+
     <table className="w-full text-gray-700 border-collapse">
       <thead className="sticky top-0 bg-gray-200 shadow">
         <tr className="text-gray-600 uppercase text-sm">
@@ -204,6 +215,7 @@ const SalesManagement = ({ isSidebarOpen }) => {
           <th className="py-3 px-4 text-left">Total Sales</th>
         </tr>
       </thead>
+      
       <tbody>
         {displayedCustomers.map((customer, index) => (
           <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
@@ -215,7 +227,7 @@ const SalesManagement = ({ isSidebarOpen }) => {
         ))}
       </tbody>
     </table>
-  </div>
+  </div>)}
 
   {/* Pagination Controls */}
   <div className="flex justify-center mt-2 space-x-2">
@@ -252,7 +264,7 @@ const SalesManagement = ({ isSidebarOpen }) => {
 
 
 
-      </div>
+      </div>)}
     </div>
   );
 };

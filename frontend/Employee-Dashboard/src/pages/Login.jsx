@@ -32,10 +32,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-blue-900 mb-2">Employee Login</h2>
-        <p className="text-sm text-center mb-6">
-          Don’t have an account? 
-          <Link to="/signup" className="text-blue-700 font-semibold"> Signup</Link>
-        </p>
+       
 
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
@@ -82,6 +79,14 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
+        <Link to={"https://erp-dashboard-azure.vercel.app/"} >
+          <button
+            type="submit"
+            className="w-full mt-5 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Go To HomePage
+          </button>
+          </Link>
       </div>
     </div>
   );
